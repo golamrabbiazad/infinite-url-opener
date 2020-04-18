@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bulk URL Opener</title>
+<script src="URI.js"></script>
+<script src="index.js"></script>
+<link href="index.css" rel="stylesheet">
+
+</head>
+<body style="text-align:left; padding:15px;padding-top:7px;">
+
+<span id="box1">
+
+  <h2> URL list (one per line):</h2>
+<p id="error" style="display: none; color: #F00;">Error</p>
+<p><table width="578" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top" align="right"><td width="578">
+
+<textarea name="urls" id="urls" cols="80" rows="15" wrap="off" tabindex="-1" style="width: 100%; height: 100%"></textarea><br><span style="color:#999">
+<button class="link-button" id="pasteBtn" title="Paste from clipboard (replaces current URLs)" tabindex="-1"> Paste </button> | <button class="link-button" id="copyBtn" title="Copy all URLs to clipboard" tabindex="-1"> Copy </button> | <button class="link-button" id="clearBtn" title="Clear all URLs" tabindex="-1"> Clear </button></td></tr></table><br>
+<button id="openBtn" name="openBtn" > Open All </button>
+
+</p>
+
+  <br>
+
+<h2> Settings:</h2>
+  
+  <table width="578">
+    <tr valign="top"><td>	
+    <p><input id="newTab" name="newOptions" type="radio" /> <label for="newTab" title="If selected will open each url in new tab (all tabs in one window)">Open each URL in new tab</label>
+    <span id="dedicatedWindowCheckbox"  style="display:none" ><input id="dedicatedWindow" type="checkbox" disabled style="display:none"  />  <label  style="display:none"  for="dedicatedWindow" title="If checked, new tabs will open in new  window (not the current one)">in new dedicated window  (if unchecked will use current window)</label>    </span></p>
+     <p><input id="newWindow" name="newOptions" type="radio" /> 
+       <label for="newWindow" title="Will create new browser window for each URL">Open each URL in separate new window</label>
+    </p>   
+    <p style="display:none"><input id="xPerWindow" name="newOptions" type="radio" /> 
+       <label for="xPerWindow" title="Open specified number of tabs per window"> open
+  <input name="xNum" id="xNum" value="10" size="3" > tabs per window </label>
+      </p>
+    <p><input id="maxTotal" type="checkbox"  />  <label for="maxTotal" title="If checked, will open only the specified number of URLs">Open only the first  <input name="xNumTotal" id="xNumTotal" value="100" size="3" > URLs </label></p>
+    <p><input id="saveList" type="checkbox"  />  <label for="saveList" title="If checked, will keep the current URL list loaded when you start the bulk URL loader again">Remember the URL List </label> &nbsp;&nbsp; <span id="subOptionSave"><input id="cleanOpened" type="checkbox"  />  <label for="cleanOpened" title="When URL is opened, it will be deleted from the URL list">Remove  opened URLs from the list  </label></span></p>
+     <p style="display:none"><input type="checkbox" id="autoClose" checked disabled style="display:none" />  <label for="autoClose" title="Will close current  tab (Bulk URL Opener) when you click 'Open All'" style="display:none">Auto close Bulk URL Opener after opening the URLs</label> </p>
+    </td>
+    </tr>
+</table>
+  
+<p style="margin-top:0px"><button id="restoreDefaults" >restore defaults</button>
+</p>
+
+  <h2><a href="http://melanto.com/apps/bulk-url-opener/help-info.html" target="_blank">Help</a></h2>
+  
+</span>
+<span id="box2" style="display:none">
+<h2 id="counter"></h2>
+</span>
+
+</body>
+</html>
